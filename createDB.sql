@@ -1,8 +1,8 @@
 CREATE TABLE location
 (
 	location_id INT NOT NULL,
-	location_name INT NOT NULL,
-	location_state INT NOT NULL,
+	location_name VARCHAR(255) NOT NULL,
+	location_state VARCHAR(255) NOT NULL,
 	PRIMARY KEY (location_id)
 );
 
@@ -34,9 +34,9 @@ CREATE TABLE `user`
 CREATE TABLE product
 (
 	product_id INT NOT NULL,
-	product_name INT NOT NULL,
-	product_type INT NOT NULL,
-	product_brand INT NOT NULL,
+	product_name VARCHAR(255) NOT NULL,
+	product_type VARCHAR(255) NOT NULL,
+	product_brand VARCHAR(255) NOT NULL,
 	product_quantity INT NOT NULL,
 	product_price INT NOT NULL,
 	user_id INT NOT NULL,
