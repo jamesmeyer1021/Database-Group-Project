@@ -28,9 +28,11 @@ CREATE TABLE `user`
 	phone_number VARCHAR(255) NOT NULL,
 	cart_id INT,
 	PRIMARY KEY (user_id),
+	/*
 	FOREIGN KEY (cart_id) REFERENCES cart(cart_id)
+	*/
 );
-	
+
 CREATE TABLE `product`
 (
 	product_id INT NOT NULL,
@@ -42,8 +44,10 @@ CREATE TABLE `product`
 	user_id INT NOT NULL,
 	cart_id INT NOT NULL,
 	PRIMARY KEY (product_id),
+	/*
 	FOREIGN KEY (user_id) REFERENCES user(user_id),
 	FOREIGN KEY (cart_id) REFERENCES cart(cart_id)
+	*/
 );
 
 CREATE TABLE `location_stock`
@@ -52,6 +56,9 @@ CREATE TABLE `location_stock`
 	product_id INT NOT NULL,
 	location_id INT NOT NULL,
 	PRIMARY KEY (product_id, location_id),
+	/*
 	FOREIGN KEY (product_id) REFERENCES product(product_id),
 	FOREIGN KEY (location_id) REFERENCES location(location_id)
+	*/
 );
+
