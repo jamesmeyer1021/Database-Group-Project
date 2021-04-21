@@ -1,4 +1,4 @@
-CREATE TABLE location
+CREATE TABLE `location`
 (
 	location_id INT NOT NULL,
 	location_name VARCHAR(255) NOT NULL,
@@ -6,7 +6,7 @@ CREATE TABLE location
 	PRIMARY KEY (location_id)
 );
 
-CREATE TABLE cart
+CREATE TABLE `cart`
 (
 	product_id INT NOT NULL,
 	cart_id INT NOT NULL,
@@ -31,7 +31,7 @@ CREATE TABLE `user`
 	FOREIGN KEY (cart_id) REFERENCES cart(cart_id)
 );
 	
-CREATE TABLE product
+CREATE TABLE `product`
 (
 	product_id INT NOT NULL,
 	product_name VARCHAR(255) NOT NULL,
@@ -46,7 +46,7 @@ CREATE TABLE product
 	FOREIGN KEY (cart_id) REFERENCES cart(cart_id)
 );
 
-CREATE TABLE location_stock
+CREATE TABLE `location_stock`
 (
 	product_quantity INT NOT NULL,
 	product_id INT NOT NULL,
