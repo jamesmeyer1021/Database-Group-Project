@@ -2,6 +2,7 @@
 
 	//opens mysqli connection
 	$mysqli = new mysqli('localhost', 'root', '', 'FantasyShop');
+
 	//error handler
 	if ($mysqli->connect_error) {
 		die("Connection failed: " . $mysqli->connect_error);
@@ -11,6 +12,7 @@
  $sql = 'SELECT * FROM product';
 	$stmt = $mysqli->prepare($sql);
 	$stmt->execute();
+
 ?>
 
 <!DOCTYPE html>
@@ -25,7 +27,7 @@
 <body>
 
  <?php
-		//lloping through results 	
+		//looping through results 	
 		while($stmt->fetch()) {
 			echo $db_product . ' ';
 	}
