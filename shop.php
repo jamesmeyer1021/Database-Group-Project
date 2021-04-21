@@ -12,6 +12,7 @@
  $sql = 'SELECT * FROM product';
 	$stmt = $mysqli->prepare($sql);
 	$stmt->execute();
+	$stmt->bind_result($db_product_id, $db_product_name, $db_product_type, $db_product_brand, $db_product_quantity, $db_product_price, $db_user_id, $db_cart_id);
 
 ?>
 
@@ -29,7 +30,7 @@
  <?php
 		//looping through results 	
 		while($stmt->fetch()) {
-			echo $db_product . ' ';
+			echo $db_product_id . ' ' . $db_product_name . ' ' . $db_product_type . ' ' . $db_product_brand . ' ' . $db_product_quantity . ' ' . $db_product_price . ' ' . $db_user_id . ' ' . $db_cart_id . '<br>';
 	}
 	//closing connections
 		$stmt->close();
