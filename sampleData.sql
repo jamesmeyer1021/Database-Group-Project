@@ -57,7 +57,7 @@ insert into product(product_id,product_name,product_type,product_brand,product_q
 values(112,'Keyblade', 'Weapon', 'Kingdom Hearts', 5 , 500, 2, 002);
 
 insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price,user_id,cart_id)
-values(113,'Master Sword', 'Weapon', 'Zeld', 1 , 300, 3, 003);
+values(113,'Master Sword', 'Weapon', 'Zelda', 1 , 300, 3, 003);
 
 insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price,user_id,cart_id)
 values(114,'Blue Shell', 'Weapon', 'Mario', 15 , 200, 4, 004);
