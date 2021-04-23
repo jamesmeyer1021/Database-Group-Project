@@ -33,6 +33,7 @@ values(1115, 'Potions and curiosities', 'North Dakota');
 
 /* Cart Makeups */
 
+/*
 insert into cart(product_id,cart_id, product_quantity)
 values(111,001,1);
 
@@ -47,23 +48,24 @@ values(114,004,15);
 
 insert into cart(product_id,cart_id, product_quantity)
 values(115,005,4);
+*/
 
 /*Product Makeups */
 
-insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price,user_id,cart_id)
-values(111,'Energy Sword', 'Weapon', 'Halo', 1 , 200, 1, 001);
+insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price)
+values(111,'Energy Sword', 'Weapon', 'Halo', 1 , 200);
 
-insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price,user_id,cart_id)
-values(112,'Keyblade', 'Weapon', 'Kingdom Hearts', 5 , 500, 2, 002);
+insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price)
+values(112,'Keyblade', 'Weapon', 'Kingdom Hearts', 5 , 500);
 
-insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price,user_id,cart_id)
-values(113,'Master Sword', 'Weapon', 'Zelda', 1 , 300, 3, 003);
+insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price)
+values(113,'Master Sword', 'Weapon', 'Zelda', 1 , 300);
 
-insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price,user_id,cart_id)
-values(114,'Blue Shell', 'Weapon', 'Mario', 15 , 200, 4, 004);
+insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price)
+values(114,'Blue Shell', 'Weapon', 'Mario', 15 , 200);
 
-insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price,user_id,cart_id)
-values(115,'Ray Gun', 'Weapon', 'Activision', 4 , 450, 5, 005);
+insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price)
+values(115,'Ray Gun', 'Weapon', 'Activision', 4 , 450);
 
 /* location_stock makeups */
 

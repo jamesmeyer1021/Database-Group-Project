@@ -2,6 +2,7 @@
 	session_start();
 
 	$err = '';
+	$success = '';
 	$goodToRedirect = false;
 
 	if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -50,7 +51,7 @@
 				$stmt->execute();
 				$stmt->close();
 
-				$goodToRedirect = true;
+				$success = 'Successfully created account!';
 			}
 		}
 
@@ -72,6 +73,7 @@
 
 			if ($pw == $db_pw) {
 				$goodToRedirect = true;
+				$_SESSION['uid'] = $db_uid;
 			}
 			else {
 				$err = 'Incorrect username/password';
@@ -136,6 +138,7 @@
 	</form>
 
 	<p style="color:red;"><?=$err?></p>
+	<p><?=$success?></p>
 </body>
 
 </html>
