@@ -19,7 +19,7 @@
 	$stmt = $mysqli->prepare($sql);
 	$stmt->execute();
 	$stmt->bind_result($db_product_id, $db_product_name, $db_product_type, $db_product_brand, $db_product_quantity, $db_product_price);
-	
+
 	$output = '';
 	//setting titles
 	$output .= '<table>';
@@ -49,6 +49,12 @@
 	$mysqli->close();
 ?>
 
+
+
+
+
+
+<!-- HTML SECTION -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,9 +73,33 @@ table, th, td {
 </head>
 
 <body>
-	<p style="text-align:right;"><a href="cart.php">View cart</a></p>
-	<?php echo $output; ?>
+	<center><p>From below dropdown menus you can apply filters</p><center>
+  <!--filter forms-->
+  <form action="" method="post">
+            <select name="type">
+                <option value="">Select Type</option>
+                <option value="Weapon">Weapon</option>
+            </select>
+            <select name="brand">
+                <option value ="">Select Brand</option>
+                <option value="Halo">Halo</option>
+                <option value="Kingdom Hearts">Kingdom Hearts</option>
+																<option value="Zelda">Zelda</option>
+																<option value="Mario">Mario</option>
+																<option value="Activision">Activision</option>
+            </select>
+            <select name="price">
+                <option value="">Select Price Range</option>
+                <option value="range1">200 - 300</option>
+                <option value="range2">300 - 400</option>
+																<option value="range3">400 - 500</option>
+            </select>
+												<button type="submit" class="btn btn-primary">Apply</button>
+  </form>
 
+	<h2>Products</h2>
+	<p ><a href="cart.php">View cart</a></p>
+	<?php echo $output; ?>
 
 	<script>
 		function addToCart(id) {
@@ -87,8 +117,5 @@ table, th, td {
 			});
 		}
 	</script>
-
-
-
 </body>
 </html>
