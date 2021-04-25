@@ -21,15 +21,29 @@
 	$stmt->bind_result($db_product_id, $db_product_name, $db_product_type, $db_product_brand, $db_product_quantity, $db_product_price);
 	
 	$output = '';
+	//setting titles
+	$output .= '<table>';
+		$output .= '	<tr> 
+				<th> Product ID </th>
+				<th> Product Name </th>
+				<th> Product Type </th>
+				<th> Brand </th>
+				<th> In Stock </th>
+				<th> Price </th>
+				</tr>';
 	//looping through results 	
 	while($stmt->fetch()) {
 		//if product is not out of stock
 		if($db_product_quantity > 0) {
-			$output .= $db_product_id . ' ' . $db_product_name . ' ' . $db_product_type . ' ' . $db_product_brand . ' ' . $db_product_quantity . ' ' . $db_product_price .  '<br>';
-			$output .= '<button onclick="addToCart('.$db_product_id.')">Add To Cart</button> <br>';
+			$output .= '<tr>';
+			$output .= '<td>' . $db_product_id . '</td><td>' . $db_product_name . '</td><td>' . $db_product_type . '</td><td>' . $db_product_brand . '</td><td>' . $db_product_quantity . '</td><td>$' . $db_product_price .  '</td>';
+			$output .= '<td><button onclick="addToCart('.$db_product_id.')">Add To Cart</button> </td>';
+			$output .= '</tr>';
 		}
 	
 	}
+	$output .= '</table>';
+
 	//closing connections
 	$stmt->close();
 	$mysqli->close();
@@ -43,10 +57,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Fantasy Shop</title>
+
+<style>
+table, th, td {
+	border: 1px solid black;
+	padding: 5px;
+}
+</style>
 </head>
 
 <body>
-	<a href="cart.php">View cart</a><br>
+	<p style="text-align:right;"><a href="cart.php">View cart</a></p>
 	<?php echo $output; ?>
 
 
@@ -66,5 +87,8 @@
 			});
 		}
 	</script>
+
+
+
 </body>
 </html>

@@ -1,18 +1,18 @@
 /* user makeups(no user_id as its auto-increment) */
-insert into user( city,state,zip, address, first_name, last_name,email,password,phone_number,cart_id)
-values('New York', 'New York State ',10001, '1111 brooklyn avenue', 'Stan', 'Lee', 'StrongestAvenger@yahoo.com','Y1965','718-111-1111', 001);
+insert into user( city,state,zip, address, first_name, last_name,email,password,phone_number)
+values('New York', 'New York State ',10001, '1111 brooklyn avenue', 'Stan', 'Lee', 'StrongestAvenger@yahoo.com','Y1965','718-111-1111');
 
-insert into user( city,state,zip, address, first_name, last_name,email,password,phone_number,cart_id)
-values('North Fort Myers', 'Florida',33917, '545 Pine Island Rd', 'Jimmy', 'Dean', 'goodEatz@gmail.com','S3345','614-559-9931', 002);
+insert into user( city,state,zip, address, first_name, last_name,email,password,phone_number)
+values('North Fort Myers', 'Florida',33917, '545 Pine Island Rd', 'Jimmy', 'Dean', 'goodEatz@gmail.com','S3345','614-559-9931');
 
-insert into user( city,state,zip, address, first_name, last_name,email,password,phone_number,cart_id)
-values('North Fort Myers', 'Florida',33917, '13050 N Cleveland Ave', 'George', 'Foreman', 'GrillinDad434@yahoo.com','G4456','614-443-2251', 003);
+insert into user( city,state,zip, address, first_name, last_name,email,password,phone_number)
+values('North Fort Myers', 'Florida',33917, '13050 N Cleveland Ave', 'George', 'Foreman', 'GrillinDad434@yahoo.com','G4456','614-443-2251');
 
-insert into user( city,state,zip, address, first_name, last_name,email,password,phone_number,cart_id)
-values('Columbus', 'Ohio',43110, '78223 Goliad rd', 'Jimmy', 'Buffet', 'RunningOutOfIdeas331@bing.com','Z5123453','614-443-2251', 004);
+insert into user( city,state,zip, address, first_name, last_name,email,password,phone_number)
+values('Columbus', 'Ohio',43110, '78223 Goliad rd', 'Jimmy', 'Buffet', 'RunningOutOfIdeas331@bing.com','Z5123453','614-443-2251');
 
-insert into user( city,state,zip, address, first_name, last_name,email,password,phone_number,cart_id)
-values('Obetz', 'Ohio',43110, '4529 Obetz Reese Rd', 'Jimmy', 'Hendrix', 'StoneFr33@gmail.com','S11112','614-222-3344', 005);
+insert into user( city,state,zip, address, first_name, last_name,email,password,phone_number)
+values('Obetz', 'Ohio',43110, '4529 Obetz Reese Rd', 'Jimmy', 'Hendrix', 'StoneFr33@gmail.com','S11112','614-222-3344');
 
 /* Location makeups */
 
