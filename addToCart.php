@@ -15,18 +15,9 @@
 		$stmt->fetch();
 		$stmt->close();
 
-		//If item is already added to cart,
-		if (isset($db_pid)) {
-			//run update
-			$sql = 'UPDATE cart
-					SET product_quantity = product_quantity + 1
-					WHERE product_id = ? AND user_id = ?';
-			$stmt = $mysqli->prepare($sql);
-			$stmt->bind_param('ii', $p_id, $u_id);
-			$stmt->execute();
-			$stmt->close();
-		}
-		else {
+		//If item isn't already added to cart,
+		if (empty($db_pid)) {
+
 			//run insert
 			$sql = 'INSERT INTO cart
 					(product_id, user_id, product_quantity)

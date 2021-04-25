@@ -18,14 +18,14 @@
  	$sql = 'SELECT * FROM product';
 	$stmt = $mysqli->prepare($sql);
 	$stmt->execute();
-	$stmt->bind_result($db_product_id, $db_product_name, $db_product_type, $db_product_brand, $db_product_quantity, $db_product_price, $db_user_id, $db_cart_id);
+	$stmt->bind_result($db_product_id, $db_product_name, $db_product_type, $db_product_brand, $db_product_quantity, $db_product_price);
 	
 	$output = '';
 	//looping through results 	
 	while($stmt->fetch()) {
 		//if product is not out of stock
 		if($db_product_quantity > 0) {
-			$output .= $db_product_id . ' ' . $db_product_name . ' ' . $db_product_type . ' ' . $db_product_brand . ' ' . $db_product_quantity . ' ' . $db_product_price . ' ' . $db_user_id . ' ' . $db_cart_id . '<br>';
+			$output .= $db_product_id . ' ' . $db_product_name . ' ' . $db_product_type . ' ' . $db_product_brand . ' ' . $db_product_quantity . ' ' . $db_product_price .  '<br>';
 			$output .= '<button onclick="addToCart('.$db_product_id.')">Add To Cart</button> <br>';
 		}
 	
@@ -46,7 +46,7 @@
 </head>
 
 <body>
-
+	<a href="cart.php">View cart</a><br>
 	<?php echo $output; ?>
 
 
