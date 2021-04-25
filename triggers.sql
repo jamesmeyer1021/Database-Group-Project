@@ -24,8 +24,8 @@ FOR EACH ROW
 BEGIN
 	DECLARE update_dif integer;
 	SET update_dif = NEW.product_quantity - OLD.product_quantity;
-    UPDATE product
+	UPDATE product
 	SET product.product_quantity = product.product_quantity - update_dif
-    WHERE product.product_id = NEW.product_id;
+	WHERE product.product_id = NEW.product_id;
 END //
 DELIMITER ;
