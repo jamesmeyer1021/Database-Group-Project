@@ -24,6 +24,13 @@
 					<th> Price </th>
 				</tr>';
 
+<<<<<<< Updated upstream
+=======
+
+	//$sql = 'SELECT * FROM product ' . $sqlConditions;
+
+
+>>>>>>> Stashed changes
 	//sql query
 	$sql = 'SELECT * FROM product';
 	$stmt = $mysqli->prepare($sql);
@@ -63,11 +70,23 @@
 table, th, td {
 	border: 1px solid black;
 	padding: 5px;
+	background-color:white;
+}
+body{
+	background-image:url(https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png);
+	font-family:Verdana;
+}
+@font-face{ 
+	font-family:Starborn; 
+	src:url('STARBORN.TTF');
 }
 </style>
 </head>
 
 <body>
+<p style="text-align: right"><a href="cart.php">View cart</a></p>
+<center><p style="font-size:100px; font-family:Starborn;">Fantasy Shop</p></center>
+
 	<center><p>From below dropdown menus you can apply filters</p><center>
 	  <!--filter forms-->
 	<form action="" method="post">
@@ -93,8 +112,7 @@ table, th, td {
 		<button type="submit" class="btn btn-primary">Apply</button>
 	</form>
 
-	<h2>Products</h2>
-	<p><a href="cart.php">View cart</a></p>
+	<h2 style="font-family:Starborn;">Products</h2>
 	<?php echo $output; ?>
 
 	<script>
@@ -113,5 +131,8 @@ table, th, td {
 			});
 		}
 	</script>
+
+<center><p style="font-size:10px;">Built by James Meyer, Jordan Odenthal, Jason Shea, Tony Shelton-McGaha, and Zoe Zellner</p></center>
+
 </body>
 </html>
