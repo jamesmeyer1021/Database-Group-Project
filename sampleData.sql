@@ -51,8 +51,8 @@ insert into product(product_id,product_name,product_type,product_brand,product_q
 values(116,'Health Potion', 'Potion', 'Zelda', 4 , 30, 1115);
 
 insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price, location_id)
-values(116,'Magic Potion', 'Potion', 'Zelda', 4 , 30, 1115);
+values(117,'Magic Potion', 'Potion', 'Zelda', 4 , 30, 1115);
 
 insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price, location_id)
-values(116,'Grandmas Soup', 'Potion', 'Zelda', 4 , 80, 1115);
+values(118,'Grandmas Soup', 'Potion', 'Zelda', 4 , 80, 1115);
 
