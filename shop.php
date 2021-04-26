@@ -118,7 +118,7 @@ body{
 				<select name="type">
 					<option value="">Select Type</option>
 					<option value="Weapon">Weapon</option>
-					<option value="Weapon">Potion</option>
+					<option value="Potion">Potion</option>
 				</select>
 				<button type="submit">Apply</button>
 			</form>
