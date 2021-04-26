@@ -15,6 +15,7 @@ insert into user( city,state,zip, address, first_name, last_name,email,password,
 values('Obetz', 'Ohio',43110, '4529 Obetz Reese Rd', 'Jimmy', 'Hendrix', 'StoneFr33@gmail.com','S11112','614-222-3344');
 
 /* Location makeups */
+
 insert into location(location_id, location_name, location_state)
 values(1111, 'Rpg Emporium', 'Ohio');
 
@@ -32,6 +33,7 @@ values(1115, 'Potions and curiosities', 'North Dakota');
 
 
 /*Product Makeups */
+
 insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price, location_id)
 values(111,'Energy Sword', 'Weapon', 'Halo', 1 , 200, 1111);
 
@@ -45,14 +47,13 @@ insert into product(product_id,product_name,product_type,product_brand,product_q
 values(114,'Blue Shell', 'Weapon', 'Mario', 15 , 200, 1114);
 
 insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price, location_id)
-values(115,'Ray Gun', 'Weapon', 'Activision', 4 , 450, 1115);
+values(115,'Ray Gun', 'Weapon', 'Activision', 4 , 450, 1111);
 
 insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price, location_id)
-values(116,'Health Potion', 'Potion', 'Zelda', 4 , 30, 1115);
+values(116,'Health Potion', 'Potion', 'Zelda', 7, 50, 1115);
 
 insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price, location_id)
-values(117,'Magic Potion', 'Potion', 'Zelda', 4 , 30, 1115);
+values(117,'Magic Potion', 'Potion', 'Zelda', 12, 50, 1115);
 
 insert into product(product_id,product_name,product_type,product_brand,product_quantity,product_price, location_id)
-values(118,'Grandmas Soup', 'Potion', 'Zelda', 4 , 80, 1115);
-
+values(118,'Grandmas Soup', 'Potion', 'Zelda', 3, 120, 1115);
