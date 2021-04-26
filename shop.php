@@ -12,18 +12,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'FantasyShop');
 if ($mysqli->connect_error) {
 	die("Connection failed: " . $mysqli->connect_error);
 }
-	//opens mysqli connection
-	$mysqli = new mysqli('localhost', 'root', '', 'FantasyShop');
-
-if(isset($_POST['price'])) {	if($_POST['price']=='range1'){
-	$low = 200; $high = 300;
-}
-if($_POST['price']=='range2'){
-	$low = 300; $high = 400;
-}
-if($_POST['price']=='range3'){
-	$low = 400; $high = 500;
-} }
+//opens mysqli connection
+$mysqli = new mysqli('localhost', 'root', '', 'FantasyShop');
 
 //sql query
 if(isset($_POST['type'])) { 
@@ -59,19 +49,19 @@ else{
 }
 
 $stmt->execute();
-$stmt->bind_result($db_product_id, $db_product_name, $db_product_type, $db_product_brand, $db_product_quantity, $db_product_price);
+$stmt->bind_result($db_product_id, $db_product_name, $db_product_type, $db_product_brand, $db_product_quantity, $db_product_price, $db_location_id);
 
 $output = '';
 //setting titles
 $output .= '<table>';
-$output .= '	<tr> 
-				<th> Product ID </th>
-				<th> Product Name </th>
-				<th> Product Type </th>
-				<th> Brand </th>
-				<th> In Stock </th>
-				<th> Price </th>
-				</tr>';
+$output .= '<tr> 
+		<th> Product ID </th>
+		<th> Product Name </th>
+		<th> Product Type </th>
+		<th> Brand </th>
+		<th> In Stock </th>
+		<th> Price </th>
+		</tr>';
 //looping through results 	
 while ($stmt->fetch()) {
 	//if product is not out of stock
@@ -107,7 +97,7 @@ table, th, td {
 	background-color:white;
 }
 body{
-	background-image:url(https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png);
+	background-image:url("https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png");
 	font-family:Verdana;
 }
 @font-face{ 
@@ -128,7 +118,7 @@ body{
 				<select name="type">
 					<option value="">Select Type</option>
 					<option value="Weapon">Weapon</option>
-					<option value="Weapon">Potion</option>
+					<option value="Potion">Potion</option>
 				</select>
 				<button type="submit">Apply</button>
 			</form>
