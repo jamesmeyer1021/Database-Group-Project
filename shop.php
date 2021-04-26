@@ -12,6 +12,8 @@ $mysqli = new mysqli('localhost', 'root', '', 'FantasyShop');
 if ($mysqli->connect_error) {
 	die("Connection failed: " . $mysqli->connect_error);
 }
+	//opens mysqli connection
+	$mysqli = new mysqli('localhost', 'root', '', 'FantasyShop');
 
 if(isset($_POST['price'])) {	if($_POST['price']=='range1'){
 	$low = 200; $high = 300;
@@ -40,6 +42,7 @@ elseif  (isset($_POST['price'])) {
 	if($_POST['price']=='range1'){
 		$low = 200; $high = 300;
 	}
+
 	if($_POST['price']=='range2'){
 		$low = 300; $high = 400;
 	}
@@ -86,6 +89,9 @@ $stmt->close();
 $mysqli->close();
 ?>
 
+
+
+
 <!-- HTML SECTION -->
 <!DOCTYPE html>
 <html lang="en">
@@ -97,72 +103,74 @@ $mysqli->close();
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<title>Fantasy Shop</title>
 
-	<style>
-		table,
-		th,
-		td {
-			border: 1px solid black;
-			padding: 5px;
-		}
-	</style>
+<style>
+table, th, td {
+	border: 1px solid black;
+	padding: 5px;
+	background-color:white;
+}
+body{
+	background-image:url(https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png);
+	font-family:Verdana;
+}
+@font-face{ 
+	font-family:Starborn; 
+	src:url('STARBORN.TTF');
+}
+</style>
 </head>
 
 <body>
-	<center>
-		<p>From below dropdown menus you can apply filters</p>
-		<center>
-			<!--filter forms-->
-			<form action="" method="post">
-				<select name="type">
-					<option value="">Select Type</option>
-					<option value="Weapon">Weapon</option>
-					<option value="Weapon">Potion</option>
-				</select>
-				<button type="submit">Apply</button>
-			</form>
+<p style="text-align: right"><a href="cart.php">View cart</a></p>
+<center><p style="font-size:100px; font-family:Starborn;">Fantasy Shop</p></center>
 
-			<form action="" method="post">
-				<select name="brand">
-					<option value="">Select Brand</option>
-					<option value="Halo">Halo</option>
-					<option value="Kingdom Hearts">Kingdom Hearts</option>
-					<option value="Zelda">Zelda</option>
-					<option value="Mario">Mario</option>
-					<option value="Activision">Activision</option>
-				</select>
-				<button type="submit">Apply</button>
-			</form>
+	<center><p>From below dropdown menus you can apply filters</p><center>
+	  <!--filter forms-->
+	<form action="" method="post">
+		<select name="type">
+			<option value="">Select Type</option>
+			<option value="Weapon">Weapon</option>
+			<option value="Potion">Potion</option>
+		</select>
+		<select name="brand">
+			<option value="">Select Brand</option>
+			<option value="Halo">Halo</option>
+			<option value="Kingdom Hearts">Kingdom Hearts</option>
+			<option value="Zelda">Zelda</option>
+			<option value="Mario">Mario</option>
+			<option value="Activision">Activision</option>
+		</select>
+		<select name="price">
+			<option value="">Select Price Range</option>
+			<option value="range1">200 - 300</option>
+			<option value="range2">300 - 400</option>
+			<option value="range3">400 - 500</option>
+		</select>
+		<button type="submit" class="btn btn-primary">Apply</button>
+	</form>
 
-			<form action="" method="post">
-				<select name="price">
-					<option value="">Select Price Range</option>
-					<option value="range1">200 - 300</option>
-					<option value="range2">300 - 400</option>
-					<option value="range3">400 - 500</option>
-				</select>
-				<button type="submit">Apply</button>
-			</form>
+	<h2 style="font-family:Starborn;">Products</h2>
+	<?php echo $output; ?>
 
-			<h2>Products</h2>
-			<p><a href="cart.php">View cart</a></p>
-			<?php echo $output; ?>
-
-			<script>
-				function addToCart(id) {
-					const data = {
-						product_id: id,
-						uid: <?php echo $_SESSION['uid']; ?>
-					};
-					$.ajax({
-						type: "POST",
-						url: "./addToCart.php",
-						data: data,
-						success: function(data, status) {
-							console.log(status);
-						}
-					});
+	<script>
+		function addToCart(id) {
+			const data = {
+				product_id: id,
+				uid: <?php echo $_SESSION['uid']; ?>
+			};
+			$.ajax({
+				type: "POST",
+				url: "./addToCart.php",
+				data: data,
+				success: function (data, status) {
+					console.log(status);
 				}
-			</script>
+			});
+		}
+	</script>
+
+<center><p style="font-size:10px;">Built by James Meyer, Jordan Odenthal, Jason Shea, Tony Shelton-McGaha, and Zoe Zellner</p></center>
+
 </body>
 
 </html>
