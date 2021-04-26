@@ -6,16 +6,6 @@ CREATE TABLE `location`
 	PRIMARY KEY (location_id)
 );
 
-CREATE TABLE `cart`
-(
-	product_id INT NOT NULL,
-	-- cart_id INT NOT NULL,
-	user_id INT NOT NULL,
-	product_quantity INT NOT NULL,
-	-- PRIMARY KEY (cart_id)
-	PRIMARY KEY (product_id, user_id)
-);
-
 CREATE TABLE `user`
 (
 	city VARCHAR(255) NOT NULL,
@@ -28,11 +18,7 @@ CREATE TABLE `user`
 	user_id INT NOT NULL AUTO_INCREMENT,
 	password VARCHAR(255) NOT NULL,
 	phone_number VARCHAR(255) NOT NULL,
-	-- cart_id INT,
 	PRIMARY KEY (user_id)
-	/*
-	FOREIGN KEY (cart_id) REFERENCES cart(cart_id)
-	*/
 );
 
 CREATE TABLE `product`
@@ -43,24 +29,19 @@ CREATE TABLE `product`
 	product_brand VARCHAR(255) NOT NULL,
 	product_quantity INT NOT NULL,
 	product_price INT NOT NULL,
-	-- user_id INT NOT NULL,
-	-- cart_id INT NOT NULL,
-	PRIMARY KEY (product_id)
-	/*
-	FOREIGN KEY (user_id) REFERENCES user(user_id),
-	FOREIGN KEY (cart_id) REFERENCES cart(cart_id)
-	*/
-);
-
-CREATE TABLE `location_stock`
-(
-	product_quantity INT NOT NULL,
-	product_id INT NOT NULL,
 	location_id INT NOT NULL,
-	PRIMARY KEY (product_id, location_id)
-	/*
-	FOREIGN KEY (product_id) REFERENCES product(product_id),
+
+	PRIMARY KEY (product_id),
 	FOREIGN KEY (location_id) REFERENCES location(location_id)
-	*/
+
 );
 
+CREATE TABLE `cart`
+(
+	product_id INT NOT NULL,
+	user_id INT NOT NULL,
+	product_quantity INT NOT NULL,
+	PRIMARY KEY (product_id, user_id),
+	FOREIGN KEY (product_id) REFERENCES product(product_id),
+	FOREIGN KEY (user_id) REFERENCES user(user_id)
+);
