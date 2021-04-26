@@ -30,14 +30,23 @@ elseif (isset($_POST['brand'])) {
 } 
 elseif  (isset($_POST['price'])) {
 	if($_POST['price']=='range1'){
-		$low = 200; $high = 300;
+		$low = 0; $high = 100;
 	}
 
 	if($_POST['price']=='range2'){
-		$low = 300; $high = 400;
+		$low = 100; $high = 200;
 	}
 	if($_POST['price']=='range3'){
+		$low = 200; $high = 300;
+	} 
+	if($_POST['price']=='range4'){
+		$low = 300; $high = 400;
+	}
+	if($_POST['price']=='range5'){
 		$low = 400; $high = 500;
+	} 
+	if($_POST['price']=='range6'){
+		$low = 500; $high = 600;
 	} 
 	$sql= "SELECT * FROM product WHERE product_price BETWEEN ? AND ?";
 	$stmt = $mysqli->prepare($sql);
@@ -138,9 +147,12 @@ body{
 			<form action="" method="post">
 				<select name="price">
 					<option value="">Select Price Range</option>
-					<option value="range1">200 - 300</option>
-					<option value="range2">300 - 400</option>
-					<option value="range3">400 - 500</option>
+					<option value="range1">0 - 100</option>
+					<option value="range2">100 - 200</option>
+					<option value="range3">200 - 300</option>
+					<option value="range4">300 - 400</option>
+					<option value="range5">400 - 500</option>
+					<option value="range6">500 - 600</option>
 				</select>
 				<button type="submit">Apply</button>
 			</form>
