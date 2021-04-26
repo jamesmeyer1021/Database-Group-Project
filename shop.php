@@ -55,13 +55,13 @@ $output = '';
 //setting titles
 $output .= '<table>';
 $output .= '<tr> 
-			<th> Product ID </th>
-			<th> Product Name </th>
-			<th> Product Type </th>
-			<th> Brand </th>
-			<th> In Stock </th>
-			<th> Price </th>
-			</tr>';
+		<th> Product ID </th>
+		<th> Product Name </th>
+		<th> Product Type </th>
+		<th> Brand </th>
+		<th> In Stock </th>
+		<th> Price </th>
+		</tr>';
 //looping through results 	
 while ($stmt->fetch()) {
 	//if product is not out of stock
