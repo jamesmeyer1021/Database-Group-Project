@@ -24,10 +24,6 @@
 					<th> Price </th>
 				</tr>';
 
-
-	$sql = 'SELECT * FROM product ' . $sqlConditions;
-
-
 	//sql query
 	$sql = 'SELECT * FROM product';
 	$stmt = $mysqli->prepare($sql);
