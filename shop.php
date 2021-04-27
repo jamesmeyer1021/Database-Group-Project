@@ -119,7 +119,7 @@ body{
 
 <body>
 <p style="text-align: right"><a href="cart.php">View Cart</a></p>
-<p style="text-align: right"><a href="index.php">Log Out</a></p>
+<p style="text-align:right; margin: 1px auto 0px auto"><a href="logout.php">Log Out</a></p>
 <center><p style="font-size:100px; font-family:Starborn; margin-top:0px;">Fantasy Shop</p></center>
 
 	<center><p>From below dropdown menus you can apply filters</p><center>
