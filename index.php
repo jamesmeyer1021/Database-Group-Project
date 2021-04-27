@@ -97,13 +97,29 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Food for Thought</title>
+	<title>Fantasy Shop</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<style>
+table, th, td {
+	border: 1px solid black;
+	padding: 5px;
+	background-color:white;
+}
+body{
+	background-image:url("https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png");
+	font-family:Verdana;
+}
+@font-face{ 
+	font-family:Starborn; 
+	src:url('STARBORN.OTF');
+}
+</style>
 </head>
 
 <body>
-	Login:
+	<center><p style="font-size:100px; font-family:Starborn; margin-top:0px;">Fantasy Shop</p>
+	<h2>Login:</h2>
 	<form action="" method="POST">
 		<label>Email:</label><br>
 		<input type="text" name="logEmail" required><br>
@@ -112,7 +128,7 @@
 		<button type="submit">Login</button>
 	</form>
 	<br>
-	Register:
+	<h2>Register:</h2>
 	<form action="" method="POST">
 		<label>City:</label><br>
 		<input type="text" name="regCity" required><br>
@@ -139,6 +155,7 @@
 
 	<p style="color:red;"><?=$err?></p>
 	<p><?=$success?></p>
+</center>
 </body>
 
 </html>

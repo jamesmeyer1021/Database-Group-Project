@@ -26,13 +26,22 @@
 	$stmt->bind_result($db_id, $db_name, $db_type, $db_brand, $db_price, $db_quantity);
 	
 	$output = '';
+	$output .= '<table>';
+	$output .= '<tr> 
+		<th> Product Name </th>
+		<th> Product Type </th>
+		<th> Brand </th>
+		<th> Price </th>
+		<th> In Stock </th>
+		</tr>';
 	//looping through results 	
 	while($stmt->fetch()) {
-		$output .= $db_name . ' ' . $db_type . ' ' . $db_brand . ' ' . $db_price . ' ';
-		$output .= '<span id="quantity-'.$db_id.'">'.$db_quantity.'</span>';
+		$output .= '<tr>';
+		$output .= '<td>' . $db_name . '</td><td>' . $db_type . '</td><td>' . $db_brand . '</td><td>' . $db_price . '</td><td>';
+		$output .= '<span id="quantity-'.$db_id.'">'.$db_quantity.'</span></td><td>';
 		$output .= '<button onclick="incrementQuantity('.$db_id.')">+</button>';
 		$output .= '<button onclick="decrementQuantity('.$db_id.')">-</button>';
-		$output .= '<button onclick="deleteFromCart('.$db_id.')">Delete</button><br>';
+		$output .= '<button onclick="deleteFromCart('.$db_id.')">Delete</button></td></tr>';
 	}
 	//closing connections
 	$stmt->close();
@@ -47,10 +56,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <title>Fantasy Shop</title>
+<style>
+table, th, td {
+	border: 1px solid black;
+	padding: 5px;
+	background-color:white;
+}
+body{
+	background-image:url("https://www.toptal.com/designers/subtlepatterns/patterns/triangle-mosaic.png");
+	font-family:Verdana;
+}
+@font-face{ 
+	font-family:Starborn; 
+	src:url('STARBORN.OTF');
+}
+</style>
 </head>
 
 <body>
-
+	<p style="text-align: right"><a href="shop.php">Back to Shopping</a></p>
+	<center><p style="font-size:100px; font-family:Starborn; margin-top:0px;">Fantasy Shop</p>
 	<?php echo $output; ?>
 
 	<script>
@@ -103,5 +128,6 @@
 		}
 		
 	</script>
+	</center>
 </body>
 </html>
